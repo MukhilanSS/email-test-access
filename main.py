@@ -4,7 +4,7 @@ from urllib.parse import parse_qsl, urlencode
 
 # --- User Configuration ---
 # Enter the API URL where emails can be fetched
-API_URL = "https://mocki.io/v1/03ccaf73-fa1a-4c98-984d-0f3cfa5568c4"  # Replace with your actual API URL
+API_URL = "https://mocki.io/v1/a9442f61-491a-4126-8c87-e90e0fd0d4de"  # Replace with your actual API URL
 
 
 def fetch_emails_from_api(api_url):
