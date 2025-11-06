@@ -1,0 +1,34 @@
+name: Update Heyzine Access
+
+on:
+  schedule:
+    # Run every hour (adjust as needed)
+    - cron: '0 */2 * * *'
+  
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+jobs:
+  update-access:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Step 4: Run the script
+      - name: Run Heyzine update script
+        run: python main.py
