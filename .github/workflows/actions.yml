@@ -3,7 +3,7 @@ name: Update Heyzine Access
 on:
   schedule:
     # Run every hour (adjust as needed)
-    - cron: '0 */2 * * *'
+    - cron: '0 * * * *'
   
   # Allow manual trigger from Actions tab
   workflow_dispatch:
