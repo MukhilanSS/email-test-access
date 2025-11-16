@@ -6,8 +6,12 @@ df = pd.read_excel('emails.xlsx')  # Change to your actual filename
 
 # Filter: Get rows where Active Subscription Plans is NOT "MEMBERSHIP - Monthly"
 filtered_df = df[
-    (df['Active Subscription Plans'] != 'MEMBERSHIP - Monthly') & 
-    (df['One-time Purchase Plans'] != 'DSA Pattern Mastery')
+   ((df['One-time Purchase Plans'] != 'DSA Pattern Mastery') &
+    (df['One-time Purchase Plans'].notnull())) |
+
+   ( (df['Active Subscription Plans'] != 'MEMBERSHIP - Monthly') &
+    (df['Active Subscription Plans'] != 'DSA Pattern Mastery') &
+    (df['Active Subscription Plans'].notnull()))
 ]
 
 # Separate Gmail and non-Gmail addresses
